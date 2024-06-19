@@ -86,7 +86,15 @@ server <- function(input, output) {
     ggplot(c, aes(x = gdpPercap, y = lifeExp, color = continent)) +
       geom_point(alpha = 0.5) +
       labs(title = paste("Correlación de la esperanza de vida con el
-      per cápital en", año3()),
+      per cápital en", año3()),x = paste("PIB per cápita", año3()),
+           y = paste("Esperanza de vida", año3()), 
+           color = paste("Continente", año3())) +
+      theme_minimal()
+  })
+}
+
+#Correr
+shinyApp(ui = ui, server = server)
            
   
 
