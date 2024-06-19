@@ -61,7 +61,7 @@ server <- function(input, output) {
             main = paste("Mediana del PIB per cápital por continentes en", año1()),
             xlab = "Continentes",
             ylab = "Mediana del PIB per cápital",
-            col = "#7FFFD4",
+            col = "#00CDCD",
             horiz = F)
     })
   
@@ -81,7 +81,7 @@ server <- function(input, output) {
             main = paste("Mediana de la esperanza de vida por continentes en", año2()),
             xlab = "Continentes",
             ylab = "Mediana de la esperanza de vida",
-            col = "#B2DFEE",
+            col = "#EE9572",
             horiz = F)
     })
   
