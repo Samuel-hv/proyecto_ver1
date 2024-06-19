@@ -59,4 +59,23 @@ server <- function(input, output) {
             horiz = F)
   })
   
+  output$barPlot2 <- renderPlot({
+    req(año2())
+    
+    b <- select(gapminder, continent, year, lifeExp) %>%
+      filter(year == año2()) %>%
+      group_by(continent) %>%
+      summarize(mediana_lifeExp = median(lifeExp))
+    
+    
+    #Gráfico de barras
+    barplot(height = b$mediana_lifeExp,
+            names.arg = b$continent,
+            main = paste("Mediana de la esperanza de vida por continente en", año2()),
+            xlab = "Continentes",
+            ylab = "Mediana de la esperanza de vida",
+            col = "blue",
+            horiz = F)
+  })
+  
 
