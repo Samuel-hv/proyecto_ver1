@@ -77,5 +77,16 @@ server <- function(input, output) {
             col = "blue",
             horiz = F)
   })
+  output$ggplot1 <- renderPlot({
+    req(año3())
+    
+    c <- gapminder %>%
+      filter(year == año3())
+    
+    ggplot(c, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+      geom_point(alpha = 0.5) +
+      labs(title = paste("Correlación de la esperanza de vida con el
+      per cápital en", año3()),
+           
   
 
