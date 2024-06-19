@@ -1,9 +1,6 @@
+library(shiny)
+
 library(dplyr)
-#no puede ser
+library(gapminder)
+library(ggplot2)
 
-#hola kelsy
-
-
-#hahha
-
-#ahhh
