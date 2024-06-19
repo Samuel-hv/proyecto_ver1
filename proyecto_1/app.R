@@ -1,4 +1,5 @@
 library(shiny)
+
 library(dplyr)
 library(gapminder)
 library(ggplot2)
@@ -59,7 +60,7 @@ server <- function(input, output) {
             main = paste("Mediana del PIB per cápital por continentes en", año1()),
             xlab = "Continentes",
             ylab = "Mediana del PIB per cápital",
-            col = "red",
+            col = "#7FFFD4",
             horiz = F)
     })
   
@@ -79,7 +80,7 @@ server <- function(input, output) {
             main = paste("Mediana de la esperanza de vida por continentes en", año2()),
             xlab = "Continentes",
             ylab = "Mediana de la esperanza de vida",
-            col = "blue",
+            col = "#B2DFEE",
             horiz = F)
     })
   
