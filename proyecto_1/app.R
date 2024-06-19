@@ -2,6 +2,7 @@ library(shiny)
 
 library(dplyr)
 library(gapminder)
+attach(gapminder)
 library(ggplot2)
 
 #Crear el ui
