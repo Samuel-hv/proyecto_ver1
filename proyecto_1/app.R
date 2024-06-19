@@ -43,4 +43,20 @@ server <- function(input, output) {
   
   output$barPlot1 <- renderPlot({
     req(año1())
+    #Base filtrada
+    a <- select(gapminder, continent, year, gdpPercap) %>%
+      filter(year == año1()) %>%
+      group_by(continent) %>%
+      summarize(mediana_gdpPercap = median(gdpPercap))
+    
+    #Gráfico de barras
+    barplot(height = a$mediana_gdpPercap,
+            names.arg = a$continent,
+            main = paste("Mediana del per cápita por continente en", año1()),
+            xlab = "Continentes",
+            ylab = "Mediana del per cápita",
+            col = "red",
+            horiz = F)
+  })
+  
 
