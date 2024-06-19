@@ -7,7 +7,7 @@ library(ggplot2)
 ui <- fluidPage(
   titlePanel("Gráficos de la mediana y correlación de la
              esperanza de vida con el PIB per cápital
-             por medio de los continentes"),
+             con base en los años"),
   
   #Selección por años y botoncito de generar
   sidebarLayout(
@@ -56,9 +56,9 @@ server <- function(input, output) {
     #Gráfico de barras
     barplot(height = a$mediana_gdpPercap,
             names.arg = a$continent,
-            main = paste("Mediana del per cápita por continente en", año1()),
+            main = paste("Mediana del PIB per cápital por continentes en", año1()),
             xlab = "Continentes",
-            ylab = "Mediana del per cápita",
+            ylab = "Mediana del PIB per cápital",
             col = "red",
             horiz = F)
     })
@@ -76,7 +76,7 @@ server <- function(input, output) {
     #Gráfico de barras
     barplot(height = b$mediana_lifeExp,
             names.arg = b$continent,
-            main = paste("Mediana de la esperanza de vida por continente en", año2()),
+            main = paste("Mediana de la esperanza de vida por continentes en", año2()),
             xlab = "Continentes",
             ylab = "Mediana de la esperanza de vida",
             col = "blue",
@@ -91,9 +91,9 @@ server <- function(input, output) {
     
     ggplot(c, aes(x = gdpPercap, y = lifeExp, color = continent)) +
       geom_point(alpha = 0.5) +
-      labs(title = paste("Correlación de la esperanza de vida con el
+      labs(title = paste("Correlación de la esperanza de vida con el PIB
       per cápital en", año3()),
-           x = paste("PIB per cápita"),
+           x = paste("PIB per cápital"),
            y = paste("Esperanza de vida"), 
            color = paste("Continente")) +
       theme_minimal()
